@@ -1,0 +1,21 @@
+{
+    "words": [
+      "gorm",
+      "kyosyun",
+      "dbname",
+      "sslmode",
+      "nolint",
+      "oapi",
+    ],
+    "ignoreWords": [
+      "cloudsdktool",
+      "tzdata"
+    ],
+    "flagWords": [],
+    "allowCompoundWords": true,
+    "ignorePaths": [
+    ],
+    "maxNumberOfProblems": 4,
+    "minWordLength": 4
+  }
+  
