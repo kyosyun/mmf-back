@@ -1,6 +1,5 @@
 options:
   logging: CLOUD_LOGGING_ONLY
-  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
 steps:
   # ビルドステージ
@@ -27,7 +26,8 @@ steps:
       '--region', '${_REGION}',
       '--platform', 'managed',
       '--allow-unauthenticated',
-      '--set-env-vars', 'DB_HOST=${_DB_HOST},DB_PORT=${_DB_PORT},DB_USER=${_DB_USER},DB_NAME=${_DB_NAME}'
+      '--set-env-vars', 'DB_HOST=${_DB_HOST},DB_PORT=${_DB_PORT},DB_USER=${_DB_USER},DB_NAME=${_DB_NAME}',
+      '--add-cloudsql-instances', '${_DB_HOST}'
     ]
 
 substitutions:
@@ -36,7 +36,7 @@ substitutions:
   _IMAGE: mmf-back
   _TAG: latest
   _SERVICE_NAME: mmf-back
-  _DB_HOST: your-db-host
+  _DB_HOST: murder-mystery-fans:asia-northeast1:mmf
   _DB_PORT: "5432"
   _DB_USER: postgres
   _DB_NAME: mmf
