@@ -145,3 +145,36 @@ INSERT INTO murder_mystery_master (
     4, 4, 150, FALSE, FALSE, 
     'サスペンス・ミステリー', '1回限り', '15歳以上'
 );
+
+-- 202408
+INSERT INTO murder_mystery_master (
+    title, jan_code, asin_code, release_date, official_link, amazon_link, 
+    platform, language, surugaya_link, steam_link, epicgames_link, dlsite_link, 
+    rakuten_books_link, bookwalker_link, fanza_games_link, price, discount, original_price, 
+    image_link, description, players_min, players_max, play_time, requires_gm, 
+    online_supported, genre, replayability, age_recommendation
+) VALUES
+(
+    '地球より愛をこめて', 
+    '4595989137015', 'B0DDT2GRLM', '2024-08-03', 
+    'https://www.mysterious-treasure.com/from-the-earth-with-love', 'https://www.amazon.co.jp/dp/B0DDT2GRLM', 
+    'ボードゲーム', '日本語', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+    4400.00, NULL, 4400.00, 
+    'https://prcdn.freetls.fastly.net/release_image/134244/2/134244-2-71567dea74eb517e8af47a2237a47ab6-2194x2925.jpg?width=536&quality=85,75&format=jpeg&auto=webp&fit=bounds&bg-color=fff', 
+    'はるか未来の話。星々の間を飛び交う宇宙船の軌跡が流星雨のように降り注ぎ、夜空の海を宵よりも明るく染める時代。9名の乗組員たちは、食糧を安定して確保できる惑星を見つける旅に出ていた。しかし旅の途中、寄港地と呼ばれる惑星で宇宙生物との戦いに巻き込まれ、学者が命を落としてしまう。それでも旅は続き、地球への到着を間近に迎えたこの日、もう一人の犠牲者が発生する。航海士が自室で死んでいるのが発見されたのだ。しかも、現場の状況は密室であった――。',
+    6, 7, 180, FALSE, TRUE, 
+    'SFミステリー', '1回限り', '15歳以上'
+),
+(
+    'シンデレラ・レース', 
+    NULL, NULL, '2024-08-31', 
+    NULL, 'https://booth.pm/ja/items/6030985', 
+    'ボードゲーム', '日本語', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+    700.00, NULL, 700.00, 
+    NULL, 
+    '王子様の婚約者を選ぶパーティーの前日、事件が起きた。令嬢たちはそれぞれの望みのため事件を解決し、壊されたガラスの靴を取り戻そうとする――。',
+    4, 4, 120, TRUE, TRUE, 
+    'ファンタジー・ミステリー', '1回限り', '15歳以上'
+);
+
+-- 202407
