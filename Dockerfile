@@ -16,18 +16,25 @@ FROM alpine:latest
 
 WORKDIR /app
 
+# Cloud SQL Auth Proxyと必要なパッケージをインストール
+RUN apk add --no-cache \
+    ca-certificates \
+    wget \
+    curl \
+    tzdata && \
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \
+    chmod +x /usr/local/bin/cloud_sql_proxy
+
+# タイムゾーンの設定
+RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    echo "Asia/Tokyo" > /etc/timezone
+
 # セキュリティ対策: 非rootユーザーの作成
 RUN adduser -D appuser
 
 # ビルドステージから実行ファイルをコピー
 COPY --from=builder /app/main .
 COPY --from=builder /app/db ./db
-
-# タイムゾーンの設定
-RUN apk --no-cache add tzdata && \
-    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-    echo "Asia/Tokyo" > /etc/timezone && \
-    apk del tzdata
 
 # 所有権の変更
 RUN chown -R appuser:appuser /app
