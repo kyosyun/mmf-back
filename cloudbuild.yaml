@@ -31,7 +31,7 @@ steps:
     ]
 
 substitutions:
-  _REGION: asia-northeast1
+  _REGION: us-central1
   _REPOSITORY: mmf-repository
   _IMAGE: mmf-back
   _TAG: latest
